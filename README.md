@@ -4,6 +4,13 @@
 
 **List of dependencies**
 
+### 0. Initial
+
+```
+git init
+.gitignore file
+```
+
 ### 1. [commitlint](https://github.com/conventional-changelog/commitlint)
 
 #### dd
