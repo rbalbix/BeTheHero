@@ -1,6 +1,7 @@
 const app = require('./app');
 
-require('../src/database').connect();
+// Connection with MongoDB
+// require('../src/database').connect();
 
 // ease to deploy || Verify the environment
 const PORT = process.env.PORT || 3333;
