@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.js --ignore __tests__",
     "start": "node src/server.js",
-    "test": "NODE_ENV=test && jest --watch",
+    "test": "NODE_ENV=test && jest --watch --detectOpenHandles",
     "testW": "SET \"NODE_ENV=test\" && jest"
   },
   "dependencies": {
@@ -20,6 +20,12 @@
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "faker": "^4.1.0",
     "jest": "^25.1.0",
     "supertest": "^4.0.2"
   }

@@ -75,7 +75,11 @@ Configure jest.config.js or copy from another project
 ### 5. [Faker](https://github.com/marak/Faker.js/) / [FactoryGirl](https://github.com/simonexmachina/factory-girl)
 
 ```
-See the need
+See the need.
+
+yarn add faker -D
+
+yarn add factory-girl -D
 ```
 
 ### 6. [dotenv](https://www.npmjs.com/package/dotenv)
@@ -94,6 +98,7 @@ Create .env || .env.test files or copy from another projects
 yarn add eslint -D
 
 yarn eslint --init
+FOLLOW THE INSTRUCTIONS
 
 Modify .eslintrc.json || Copy from another project
 
