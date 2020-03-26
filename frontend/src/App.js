@@ -1,9 +1,11 @@
 import React from 'react';
 
-import Header from './components/Header';
+import Logon from './pages/Logon';
+
+import './global.css';
 
 function App() {
-  return <Header title="Semana" />;
+  return <Logon />;
 }
 
 export default App;
