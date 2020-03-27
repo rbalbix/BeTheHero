@@ -21,6 +21,7 @@
 
 .profile-container header a {
   width: 260px;
+  min-width: 175px;
   margin-left: auto;
   margin-top: 0;
 }
