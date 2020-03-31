@@ -3,41 +3,73 @@ const faker = require('faker/locale/pt_BR');
 
 const app = require('../../src/app');
 const db = require('../../src/database/connection');
-// const db = require('../../src/database');
-// const factory = require('../factories');
 
 // Categoria dos testes
 describe('Profiles', () => {
-  // beforeAll(async done => {
-  //   db.connect();
-  //   await db.truncate();
-  //   db.disconnect(done);
-  // });
+  beforeEach(async () => {
+    await db.migrate.rollback();
+    await db.migrate.latest();
+  });
 
-  // beforeEach(() => {
-  //   db.connect();
-  // });
-
-  // afterEach(done => {
-  //   db.disconnect(done);
-  // });
+  afterAll(async () => {
+    await db.destroy();
+  });
 
   it('should find a /profile (GET) route', async () => {
-    const ongs = await request(app).get('/ongs');
+    const ong = {
+      name: faker.company.bsNoun(),
+      email: faker.internet.email(),
+      whatsapp: faker.phone.phoneNumberFormat(2).replace(/[() -]/g, ''),
+      city: faker.address.city(),
+      uf: faker.address.stateAbbr()
+    };
+
+    const ongResponse = await request(app)
+      .post('/ongs')
+      .send(ong);
+
+    const { id } = ongResponse.body;
 
     const response = await request(app)
       .get('/profile')
-      .set({ Authorization: ongs.body[0].id });
+      .set({ Authorization: id });
 
     expect(response.status).toBe(200);
   });
 
   it('should create list specific incidents', async () => {
-    const incidents = await request(app).get('/incidents');
+    const ong = {
+      name: faker.company.bsNoun(),
+      email: faker.internet.email(),
+      whatsapp: faker.phone.phoneNumberFormat(2).replace(/[() -]/g, ''),
+      city: faker.address.city(),
+      uf: faker.address.stateAbbr()
+    };
+
+    const ongResponse = await request(app)
+      .post('/ongs')
+      .send(ong);
+
+    const { id } = ongResponse.body;
+
+    // Create an incident
+    const incident = {
+      title: faker.lorem.slug(),
+      description: faker.lorem.sentence(),
+      value: faker.random.number(),
+      ong_id: id
+    };
+
+    const incResponse = await request(app)
+      .post('/incidents')
+      .send(incident)
+      .set({ Authorization: id });
+
+    const incId = incResponse.body.id;
 
     const response = await request(app)
       .get('/profile')
-      .set({ Authorization: incidents.body[0].ong_id });
+      .set({ Authorization: id });
 
     expect(response.status).toBe(200);
     expect(response.body.length).toBeGreaterThan(0);

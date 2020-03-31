@@ -3,28 +3,19 @@ const faker = require('faker/locale/pt_BR');
 
 const app = require('../../src/app');
 const db = require('../../src/database/connection');
-// const db = require('../../src/database');
-// const factory = require('../factories');
 
 // Categoria dos testes
 describe('Sessions', () => {
-  // beforeAll(async done => {
-  //   db.connect();
-  //   await db.truncate();
-  //   db.disconnect(done);
-  // });
+  beforeEach(async () => {
+    await db.migrate.rollback();
+    await db.migrate.latest();
+  });
 
-  // beforeEach(() => {
-  //   db.connect();
-  // });
-
-  // afterEach(done => {
-  //   db.disconnect(done);
-  // });
+  afterAll(async () => {
+    await db.destroy();
+  });
 
   it('should not find a ong session', async () => {
-    const ongs = await request(app).get('/ongs');
-
     const response = await request(app)
       .post('/sessions')
       .send({ id: '1' });
@@ -33,11 +24,23 @@ describe('Sessions', () => {
   });
 
   it('should find a ong session', async () => {
-    const ongs = await request(app).get('/ongs');
+    const ong = {
+      name: faker.company.bsNoun(),
+      email: faker.internet.email(),
+      whatsapp: faker.phone.phoneNumberFormat(2).replace(/[() -]/g, ''),
+      city: faker.address.city(),
+      uf: faker.address.stateAbbr()
+    };
+
+    const ongResponse = await request(app)
+      .post('/ongs')
+      .send(ong);
+
+    const { id } = ongResponse.body;
 
     const response = await request(app)
       .post('/sessions')
-      .send({ id: ongs.body[0].id });
+      .send({ id });
 
     expect(response.status).toBe(200);
   });

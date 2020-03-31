@@ -3,24 +3,17 @@ const faker = require('faker/locale/pt_BR');
 
 const app = require('../../src/app');
 const db = require('../../src/database/connection');
-// const db = require('../../src/database');
-// const factory = require('../factories');
 
 // Categoria dos testes
-describe('Ongs', () => {
-  // beforeAll(async done => {
-  //   db.connect();
-  //   await db.truncate();
-  //   db.disconnect(done);
-  // });
+describe('ONGs', () => {
+  beforeEach(async () => {
+    await db.migrate.rollback();
+    await db.migrate.latest();
+  });
 
-  // beforeEach(() => {
-  //   db.connect();
-  // });
-
-  // afterEach(done => {
-  //   db.disconnect(done);
-  // });
+  afterAll(async () => {
+    await db.destroy();
+  });
 
   it('should find a /ongs (GET) route', async () => {
     const response = await request(app).get('/ongs');
