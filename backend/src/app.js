@@ -4,6 +4,7 @@ require('dotenv').config({
 
 const express = require('express');
 const cors = require('cors');
+const { errors } = require('celebrate');
 
 // Separa a lógica de criação do servidor da lógica de alocação da porta.
 // Quando for executar os testes, não quero que aloque portas. Testes direto dentro da aplicação
@@ -13,6 +14,8 @@ class AppController {
 
     this.middlewares();
     this.routes();
+
+    this.validationErrors();
   }
 
   middlewares() {
@@ -24,6 +27,10 @@ class AppController {
 
   routes() {
     this.express.use(require('./routes'));
+  }
+
+  validationErrors() {
+    this.express.use(errors());
   }
 }
 
