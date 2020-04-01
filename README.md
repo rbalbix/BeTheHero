@@ -153,3 +153,13 @@ insert_final_newline = true
     routes.js (one or more?)
     server.js
 ```
+
+### **FRONTEND / MOBILE**
+
+### 12. Styled Components
+
+```
+yarn add styled-components
+
+Instalar componente vscode-styled-components
+```

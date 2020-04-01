@@ -4,7 +4,8 @@ import { FiLogIn } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import './styles.css';
+// import './styles.css';
+import { LogonContainer, SectionForm } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
@@ -30,8 +31,8 @@ export default function Logon() {
   }
 
   return (
-    <div className="logon-container">
-      <section className="form">
+    <LogonContainer>
+      <SectionForm>
         <img src={logoImg} alt="Be The Hero" />
 
         <form onSubmit={handleLogin}>
@@ -51,9 +52,9 @@ export default function Logon() {
             Não tenho cadastro
           </Link>
         </form>
-      </section>
+      </SectionForm>
 
       <img src={heroesImg} alt="Heroes" />
-    </div>
+    </LogonContainer>
   );
 }
