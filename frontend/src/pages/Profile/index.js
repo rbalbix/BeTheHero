@@ -4,7 +4,8 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import './styles.css';
+// import './styles.css';
+import { ProfileContainer } from './styles';
 import logoImg from '../../assets/logo.svg';
 
 export default function Profile() {
@@ -48,7 +49,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="profile-container">
+    <ProfileContainer>
       <header>
         <img src={logoImg} alt="Be The Hero" />
         <span>Bem vinda, {ongName}</span>
@@ -89,6 +90,6 @@ export default function Profile() {
           </li>
         ))}
       </ul>
-    </div>
+    </ProfileContainer>
   );
 }
