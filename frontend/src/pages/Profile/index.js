@@ -13,6 +13,7 @@ export default function Profile() {
   const history = useHistory();
 
   const ongId = localStorage.getItem('ongId');
+  const ongName = localStorage.getItem('ongName');
 
   useEffect(() => {
     api
@@ -50,7 +51,7 @@ export default function Profile() {
     <div className="profile-container">
       <header>
         <img src={logoImg} alt="Be The Hero" />
-        <span>Bem vinda, APAD</span>
+        <span>Bem vinda, {ongName}</span>
 
         <Link className="button" to="/incidents/new">
           Cadastrar novo caso
