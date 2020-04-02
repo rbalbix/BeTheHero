@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.js --ignore __tests__",
     "start": "node src/server.js",
-    "test": "NODE_ENV=test && jest --watch --detectOpenHandles",
-    "testW": "SET \"NODE_ENV=test\" && jest"
+    "test": "cross-env NODE_ENV=test jest --watch --detectOpenHandles"
   },
   "dependencies": {
     "celebrate": "^12.0.1",
@@ -20,6 +19,7 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
