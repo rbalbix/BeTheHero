@@ -21,33 +21,33 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
 
-  section {
-    width: 100%;
-    max-width: 380px;
-  }
+export const Section = styled.section`
+  width: 100%;
+  max-width: 380px;
 
-  section h1 {
+  h1 {
     margin: 64px 0 32px;
     font-size: 32px;
   }
 
-  section p {
+  p {
     font-size: 18px;
     color: #737380;
     line-height: 32px;
   }
+`;
 
-  form {
-    width: 100%;
-    max-width: 450px;
-  }
+export const Form = styled.form`
+  width: 100%;
+  max-width: 450px;
 
-  form input {
+  input {
     margin-top: 8px;
   }
 
-  form textarea {
+  textarea {
     margin-top: 8px;
   }
 `;

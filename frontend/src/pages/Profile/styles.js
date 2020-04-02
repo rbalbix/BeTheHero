@@ -6,28 +6,33 @@ export const ProfileContainer = styled.div`
   padding: 0 30px;
   margin: 32px auto;
 
-  header {
-    display: flex;
-    align-items: center;
+  h1 {
+    margin-top: 80px;
+    margin-bottom: 24px;
   }
+`;
 
-  header span {
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+
+  span {
     font-size: 20px;
     margin-left: 24px;
   }
 
-  header img {
+  img {
     height: 64px;
   }
 
-  header a {
+  a {
     width: 260px;
-    min-width: 175px;
+    min-width: 180px;
     margin-left: auto;
     margin-top: 0;
   }
 
-  header button {
+  button {
     height: 60px;
     width: 60px;
     border-radius: 4px;
@@ -35,55 +40,61 @@ export const ProfileContainer = styled.div`
     background: transparent;
     margin-left: 16px;
     transition: border-color 0.2s;
-  }
 
-  header button:hover {
-    border-color: #999;
+    &:hover {
+      transform: translateY(-2px);
+      border-color: #999;
+    }
   }
+`;
 
-  h1 {
-    margin-top: 80px;
-    margin-bottom: 24px;
-  }
+export const Ul = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  list-style: none;
 
-  ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    list-style: none;
-  }
-
-  ul li {
+  li {
     background: #fff;
     padding: 24px;
     border-radius: 8px;
     position: relative;
-  }
 
-  ul li button {
-    position: absolute;
-    right: 24px;
-    top: 24px;
-    border: 0;
-    transition: opacity 0.2s;
-  }
+    button {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      border: 0;
+      transition: opacity 0.2s;
 
-  ul li button:hover {
-    opacity: 0.8;
-  }
+      svg {
+        color: #a8a8b3;
+      }
 
-  ul li strong {
-    display: block;
-    margin-bottom: 16px;
-    color: #41414d;
-  }
+      &:hover {
+        opacity: 0.6;
+        transform: translateY(-1px);
+        svg {
+          size: 20;
+          color: #e02041;
+        }
+      }
+    }
 
-  ul li p + strong {
-    margin-top: 32px;
-  }
-  ul li p {
-    color: #737380;
-    line-height: 21px;
-    font-size: 16px;
+    strong {
+      display: block;
+      margin-bottom: 16px;
+      color: #41414d;
+    }
+
+    p + strong {
+      margin-top: 32px;
+    }
+
+    p {
+      color: #737380;
+      line-height: 21px;
+      font-size: 16px;
+    }
   }
 `;

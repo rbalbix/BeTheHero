@@ -5,7 +5,7 @@ import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
 // import './styles.css';
-import { LogonContainer, SectionForm } from './styles';
+import { LogonContainer, SectionForm, Form } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
@@ -35,7 +35,7 @@ export default function Logon() {
       <SectionForm>
         <img src={logoImg} alt="Be The Hero" />
 
-        <form onSubmit={handleLogin}>
+        <Form onSubmit={handleLogin}>
           <h1>Faça seu logon</h1>
 
           <input
@@ -51,7 +51,7 @@ export default function Logon() {
             <FiLogIn size={16} color="#E02041" />
             Não tenho cadastro
           </Link>
-        </form>
+        </Form>
       </SectionForm>
 
       <img src={heroesImg} alt="Heroes" />

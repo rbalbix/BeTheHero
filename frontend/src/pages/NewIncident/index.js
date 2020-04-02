@@ -5,7 +5,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
 // import './styles.css';
-import { NewIncidentContainer, Content } from './styles';
+import { NewIncidentContainer, Content, Section, Form } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -40,7 +40,7 @@ export default function NewIncident() {
   return (
     <NewIncidentContainer>
       <Content>
-        <section>
+        <Section>
           <img src={logoImg} alt="Be he Hero" />
 
           <h1>Cadastrar novo caso</h1>
@@ -52,9 +52,9 @@ export default function NewIncident() {
             <FiArrowLeft size={16} color="#E02041" />
             Voltar para home
           </Link>
-        </section>
+        </Section>
 
-        <form onSubmit={handleNewIncident}>
+        <Form onSubmit={handleNewIncident}>
           <input
             placeholder="Título do caso"
             value={title}
@@ -74,7 +74,7 @@ export default function NewIncident() {
           <button className="button" type="submit">
             Cadastrar
           </button>
-        </form>
+        </Form>
       </Content>
     </NewIncidentContainer>
   );

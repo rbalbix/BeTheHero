@@ -4,7 +4,13 @@ import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 // import './styles.css';
-import { RegisterContainer, Content } from './styles';
+import {
+  RegisterContainer,
+  Content,
+  Section,
+  Form,
+  InputGroup
+} from './styles';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -42,7 +48,7 @@ export default function Register() {
   return (
     <RegisterContainer>
       <Content>
-        <section>
+        <Section>
           <img src={logoImg} alt="Be he Hero" />
 
           <h1>Cadastro</h1>
@@ -54,9 +60,9 @@ export default function Register() {
             <FiArrowLeft size={16} color="#E02041" />
             Não tenho cadastro
           </Link>
-        </section>
+        </Section>
 
-        <form onSubmit={handleRegister}>
+        <Form onSubmit={handleRegister}>
           <input
             placeholder="Nome da ONG"
             value={name}
@@ -74,7 +80,7 @@ export default function Register() {
             onChange={e => setWhatsapp(e.target.value)}
           />
 
-          <div className="input-group">
+          <InputGroup>
             <input
               placeholder="Cidade"
               value={city}
@@ -86,12 +92,12 @@ export default function Register() {
               value={uf}
               onChange={e => setUf(e.target.value)}
             />
-          </div>
+          </InputGroup>
 
           <button className="button" type="submit">
             Cadastrar
           </button>
-        </form>
+        </Form>
       </Content>
     </RegisterContainer>
   );
