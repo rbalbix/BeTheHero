@@ -1,4 +1,4 @@
-const connection = require('../../database/connection');
+const connection = require('~/database/connection');
 
 module.exports = {
   async index(req, res) {
@@ -8,5 +8,5 @@ module.exports = {
       .select('*');
 
     return res.json(incidents);
-  }
+  },
 };
