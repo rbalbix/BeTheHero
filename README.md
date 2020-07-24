@@ -1,165 +1,63 @@
-# Project Configuration
+<h1 align="center">
+Be the Hero
+</h1>
 
-## Environment
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rbalbix/BeTheHero">
 
-**List of dependencies**
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/rbalbix/BeTheHero">
 
-### 0. Initial
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rbalbix/BeTheHero">
 
-```
-git init
-.gitignore file
-```
+  <img alt="Repository issues" src="https://img.shields.io/github/issues/rbalbix/BeTheHero">
 
-### 1. [commitlint](https://github.com/conventional-changelog/commitlint)
+  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/rbalbix/BeTheHero">
 
-#### dd
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
-```
-yarn add @commitlint/cli @commitlint/config-conventional -D
+  <img alt="License" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
 
-echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
-```
+</p>
 
-> or copy commitlint.config.js from another project
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>
+</p>
 
-### 2. [commitzen](https://github.com/commitizen/cz-cli)
+<br>
 
-```
-yarn add commitizen -D
+## Technologies
 
-yarn commitizen init cz-conventional-changelog --yarn --dev --exact
-```
+This project was developed with the following technologies:
 
-### 3. [husky](https://github.com/typicode/husky)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose ODM](https://mongoosejs.com/)
+- [Axios](https://github.com/axios/axios)
+- [Jest - TDD tests](https://jestjs.io)
+- [Styled Components](https://styled-components.com/)
+- [React](https://reactjs.org)
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io)
+- [Socket](https://socket.io/)
 
-```
-yarn add husky -D
+## Project
 
-Add to packege.json:
-"husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
-  },
-```
+Be the Hero is a project that aims to connect people who wish to make monetary contributions to NGOs (non-governmental organizations) that need help.
 
-## -> Create a repository, commit and push
+## License
 
-```
-. github || bitbucket
-> git init
->>> Copy .gitignore
-> git remote add origin https://rbalbi@bitbucket.org/rbalbi/omni-behero.git
-> git add .
-> git commit
-> git push -u origin master
-```
+This project is under the MIT license.
 
-### 4. [jest](https://jestjs.io/) / [supertest](https://github.com/visionmedia/supertest)
+---
 
-> **Inside each project (backend, frontend, mobile)**
+<p>
+  Project developed during OmniStack 11.0 Week. Thanks to the entire Rocketseat team.
+</p>
+</br>
 
-```
-yarn add jest supertest @types/jest -D
+---
 
-Create __tests__ folder
-Create __tests__/integration and __tests_/unit folders
-
-yarn jest --init
-
-Configure jest.config.js or copy from another project
-```
-
-### 5. [Faker](https://github.com/marak/Faker.js/) / [FactoryGirl](https://github.com/simonexmachina/factory-girl)
-
-```
-See the need.
-
-yarn add faker -D
-
-yarn add factory-girl -D
-```
-
-### 6. [dotenv](https://www.npmjs.com/package/dotenv)
-
-> **Inside each project (backend, frontend, mobile)**
-
-```
-yarn add dotenv
-
-Create .env || .env.test files or copy from another projects
-```
-
-### 7. [eslint](https://eslint.org/)
-
-```
-yarn add eslint -D
-
-yarn eslint --init
-FOLLOW THE INSTRUCTIONS
-
-Modify .eslintrc.json || Copy from another project
-
-VSCode extension
-```
-
-### 8. [prettier](https://prettier.io/)
-
-```
-VSCode extension
-
-"prettier.eslintIntegration": true  _is  deprecated_
-
-```
-
-### 9. [editorconfig](https://editorconfig.org/)
-
-```
-VSCode extension
-
-Right button to generate .editorconfig
-
-
-root = true
-
-[*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-```
-
-### 10. Copy files
-
-```
-.gitignore (from another project)
-```
-
-### 11. Define Structure
-
-```
-1. Create folders:
-
-  ** BACKEND
-  ./src
-      /app
-        /controllers
-        /models
-    app.js
-    routes.js (one or more?)
-    server.js
-```
-
-### **FRONTEND / MOBILE**
-
-### 12. Styled Components
-
-```
-yarn add styled-components
-
-Instalar componente vscode-styled-components
-```
+![rbalbix's github stats](https://github-readme-stats.vercel.app/api?username=rbalbix)
